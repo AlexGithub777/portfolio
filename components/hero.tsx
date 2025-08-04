@@ -69,7 +69,7 @@ export function Hero() {
                         <Button
                             size="lg"
                             onClick={() => scrollToSection("projects")}
-                            className="group"
+                            className="group hover:cursor-pointer"
                         >
                             View My Work
                             <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
@@ -78,6 +78,7 @@ export function Hero() {
                             variant="outline"
                             size="lg"
                             onClick={() => scrollToSection("contact")}
+                            className="hover:cursor-pointer"
                         >
                             <Mail className="mr-2 h-4 w-4" />
                             Contact Me

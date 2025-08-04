@@ -35,6 +35,7 @@ import {
     SiJupyter,
     SiMysql,
     SiGooglecloud,
+    SiWordpress,
 } from "react-icons/si";
 import { VscCode, VscVscode, VscAzure, VscAzureDevops } from "react-icons/vsc";
 import { Database, BarChart3, TrendingUp } from "lucide-react";
@@ -55,8 +56,9 @@ const technologies = [
     { name: "React", category: "Frameworks", icon: SiReact },
     { name: "Angular", category: "Frameworks", icon: SiAngular },
     { name: "Next.js", category: "Frameworks", icon: SiNextdotjs },
-    { name: ".NET Core", category: "Frameworks", icon: SiDotnet },
+    { name: "ASP.NET Core", category: "Frameworks", icon: SiDotnet },
     { name: "Laravel", category: "Frameworks", icon: SiLaravel },
+    { name: "WordPress", category: "Frameworks", icon: SiWordpress },
 
     // Runtime/Libraries
     { name: "Node.js", category: "Libraries", icon: SiNodedotjs },
