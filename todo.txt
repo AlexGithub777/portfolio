@@ -1,13 +1,20 @@
-recycling
-install xampp , test, deply flextime
-
-
+deploy locally: (add eacvh container to edms_app-network e.g. (docker network connect edms_app-network <container_name>)
+	- studentwell (studentwell.alexscott.me)
+	- flextime (flextime.alexscott.me)
+	- enterprise notes (notes.alexscott.me)
+	
+featured projects:
+	- finish/tweak project descriptions
+	- check all technlogies used are listed
+	- add demo link to each project
+	- add code link to each project
+	- add screenshot for each project
+	
+blog section:
+	- add mdx? if itll work with my docker setup if not hardcode new suaul posts
+	
+contact me:
+	- get contact form to work if not use mailto?
 
 
 remove unncessary dependdices
-
-
-
-git branch -M main
-git remote add origin https://github.com/AlexGithub777/FlexTime.git
-git push -u origin main

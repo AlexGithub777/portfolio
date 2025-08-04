@@ -1,0 +1,45 @@
+Featured Projects:
+
+EDMS (Emergency Device Mangement System
+Go, PostgreSQL, Docker, Bootstrap, jQuery, HTML, CSS, JavaScript, Leaflet, SQL
+Features: tbd
+Desc: tbd
+link: 
+screenshot path:
+
+Studentwell (Student health and wellness application)
+PHP, Laravel, MySQL, Bootstrap, Azure, HTML, CSS, JavaScript, jQuery, Chart.js, Google Fonts, font Awesome, SQL
+Features: tbd
+Desc: tbd
+link: 
+screenshot path:
+
+FlexTime (Fitness class and personal training application)
+WordPress, PHP, MySQL, jQuery, HTML, CSS, JavaScript, Google Fonts, font Awesome, SQL
+Features: tbdS
+Desc: tdd
+link: 
+screenshot path:
+
+Public Basketball Courts in Hawkes Bay
+HTML, CSS, JS, Google Fonts, font Awesome
+features: tbd
+desc: tbd
+link: https://alexgithub777.github.io/Hawkes-Bay-Basketball-Court-Finder/index.html
+screenshot path: 
+
+Phone Repair Booking System
+HTML, CSS, JavaScript, React, Bootstrap
+features: 
+desc: 
+link: https://alexgithub777.github.io/Phone-Fix-Booking-System/
+screenshot path:
+
+
+Enterprise Notes
+Go, HTML, CSS, JS, jQuery, Font Awesome, w3.css, PostgreSQL, SQL
+features: 
+desc: 
+link:
+screenshot path:
+
