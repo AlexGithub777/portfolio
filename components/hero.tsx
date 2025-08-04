@@ -1,7 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ArrowDown, Download } from "lucide-react";
+import { SiGithub, SiLinkedin, SiDiscord } from "react-icons/si";
+import { Mail, ArrowDown, Download } from "lucide-react";
 import Image from "next/image";
 
 export function Hero() {
@@ -85,7 +86,7 @@ export function Hero() {
                         </Button>
                         <Button variant="outline" size="lg" asChild>
                             <a
-                                href="/images/Resume_2025_it.pdf"
+                                href="/Resume_2025_it.pdf"
                                 download="Alex_Scott_Resume.pdf"
                                 className="flex items-center gap-2"
                             >
@@ -102,7 +103,7 @@ export function Hero() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Github className="h-5 w-5" />
+                                <SiGithub className="h-5 w-5" />
                                 <span className="sr-only">GitHub</span>
                             </a>
                         </Button>
@@ -112,8 +113,18 @@ export function Hero() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Linkedin className="h-5 w-5" />
+                                <SiLinkedin className="h-5 w-5" />
                                 <span className="sr-only">LinkedIn</span>
+                            </a>
+                        </Button>
+                        <Button variant="ghost" size="icon" asChild>
+                            <a
+                                href="https://discord.com/users/924175200898125825"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <SiDiscord className="h-5 w-5" />
+                                <span className="sr-only">Discord</span>
                             </a>
                         </Button>
                     </div>

@@ -40,11 +40,25 @@ import {
     SiChartdotjs,
     SiLeaflet,
     SiHtmx,
+    SiXampp,
+    SiDuckdb,
+    SiSqlite,
+    SiGooglefonts,
+    SiFontawesome,
+    SiGooglemaps,
+    SiW3Schools,
 } from "react-icons/si";
-import { VscCode, VscVscode, VscAzure, VscAzureDevops } from "react-icons/vsc";
+import { VscVscode, VscAzure, VscAzureDevops } from "react-icons/vsc";
 import { Database, BarChart3, TrendingUp } from "lucide-react";
 
-const technologies = [
+// Define the Technology type
+type Technology = {
+    name: string;
+    category: string;
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+};
+
+const technologies: Technology[] = [
     // Languages
     { name: "HTML", category: "Languages", icon: SiHtml5 },
     { name: "CSS", category: "Languages", icon: SiCss3 },
@@ -73,6 +87,9 @@ const technologies = [
     { name: "HTMX", category: "Libraries", icon: SiHtmx },
     { name: "Chart.js", category: "Libraries", icon: SiChartdotjs },
     { name: "Leaflet", category: "Libraries", icon: SiLeaflet },
+    { name: "Google Fonts", category: "Libraries", icon: SiGooglefonts },
+    { name: "Font Awesome", category: "Libraries", icon: SiFontawesome },
+    { name: "Google Maps", category: "Libraries", icon: SiGooglemaps },
     // Data Analysis & Analytics
     { name: "Pandas", category: "Libraries", icon: SiPandas },
     { name: "NumPy", category: "Libraries", icon: SiNumpy },
@@ -82,6 +99,7 @@ const technologies = [
     // Styling
     { name: "TailwindCSS", category: "Styling", icon: SiTailwindcss },
     { name: "Bootstrap", category: "Styling", icon: SiBootstrap },
+    { name: "W3.CSS", category: "Styling", icon: SiW3Schools },
 
     // Tools & Technologies
     { name: "Docker", category: "Tools & Technologies", icon: SiDocker },
@@ -89,6 +107,7 @@ const technologies = [
     { name: "GitHub", category: "Tools & Technologies", icon: SiGithub },
     { name: "Postman", category: "Tools & Technologies", icon: SiPostman },
     { name: "Swagger", category: "Tools & Technologies", icon: SiSwagger },
+    { name: "XAMPP", category: "Tools & Technologies", icon: SiXampp },
     { name: "GraphQL", category: "Tools & Technologies", icon: SiGraphql },
     { name: "Grafana", category: "Tools & Technologies", icon: SiGrafana },
     {
@@ -114,9 +133,11 @@ const technologies = [
     },
 
     // Databases
-    { name: "PostgreSQL", category: "Database", icon: SiPostgresql },
-    { name: "MySQL", category: "Database", icon: SiMysql },
-    { name: "MS SQL Server", category: "Database", icon: DiMsqlServer },
+    { name: "PostgreSQL", category: "Databases", icon: SiPostgresql },
+    { name: "MySQL", category: "Databases", icon: SiMysql },
+    { name: "MS SQL Server", category: "Databases", icon: DiMsqlServer },
+    { name: "SQLite", category: "Databases", icon: SiSqlite },
+    { name: "DuckDB", category: "Databases", icon: SiDuckdb },
 
     // Cloud & DevOps
     { name: "Azure", category: "Cloud & DevOps", icon: VscAzure },
@@ -125,13 +146,16 @@ const technologies = [
     { name: "Cloudflare", category: "Cloud & DevOps", icon: SiCloudflare },
 ];
 
+// Sort technologies alphabetically
+technologies.sort((a, b) => a.name.localeCompare(b.name));
+
 const categoryColors = {
     Languages: "default",
     Frameworks: "secondary",
     Libraries: "outline",
     Styling: "default",
     "Tools & Technologies": "outline",
-    Database: "secondary",
+    Databases: "secondary",
     "Cloud & DevOps": "default",
 } as const;
 
@@ -140,7 +164,7 @@ const categoryOrder = [
     "Frameworks",
     "Libraries",
     "Styling",
-    "Database",
+    "Databases",
     "Tools & Technologies",
     "Cloud & DevOps",
 ];
@@ -188,7 +212,10 @@ export function TechStack() {
                                             }
                                             className="text-sm py-2 px-4 hover:scale-105 transition-transform cursor-default flex items-center gap-2"
                                         >
-                                            <IconComponent size={14} />
+                                            <IconComponent
+                                                width="16"
+                                                height="16"
+                                            />
                                             {tech.name}
                                         </Badge>
                                     );
