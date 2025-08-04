@@ -36,6 +36,10 @@ import {
     SiMysql,
     SiGooglecloud,
     SiWordpress,
+    SiCloudflare,
+    SiChartdotjs,
+    SiLeaflet,
+    SiHtmx,
 } from "react-icons/si";
 import { VscCode, VscVscode, VscAzure, VscAzureDevops } from "react-icons/vsc";
 import { Database, BarChart3, TrendingUp } from "lucide-react";
@@ -66,7 +70,9 @@ const technologies = [
     { name: "AutoMapper", category: "Libraries", icon: SiDotnet },
     { name: "RxJS", category: "Libraries", icon: SiReactivex },
     { name: "jQuery", category: "Libraries", icon: SiJquery },
-    { name: "HTMX", category: "Libraries", icon: VscCode },
+    { name: "HTMX", category: "Libraries", icon: SiHtmx },
+    { name: "Chart.js", category: "Libraries", icon: SiChartdotjs },
+    { name: "Leaflet", category: "Libraries", icon: SiLeaflet },
     // Data Analysis & Analytics
     { name: "Pandas", category: "Libraries", icon: SiPandas },
     { name: "NumPy", category: "Libraries", icon: SiNumpy },
@@ -116,6 +122,7 @@ const technologies = [
     { name: "Azure", category: "Cloud & DevOps", icon: VscAzure },
     { name: "GCP", category: "Cloud & DevOps", icon: SiGooglecloud },
     { name: "Azure DevOps", category: "Cloud & DevOps", icon: VscAzureDevops },
+    { name: "Cloudflare", category: "Cloud & DevOps", icon: SiCloudflare },
 ];
 
 const categoryColors = {
