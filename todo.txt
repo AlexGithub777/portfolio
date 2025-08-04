@@ -1,1 +1,13 @@
+recycling
+install xampp , test, deply flextime
+
+
+
+
 remove unncessary dependdices
+
+
+
+git branch -M main
+git remote add origin https://github.com/AlexGithub777/FlexTime.git
+git push -u origin main
