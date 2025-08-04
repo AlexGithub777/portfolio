@@ -27,7 +27,7 @@ export function Hero() {
                     <div className="relative">
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
                             <Image
-                                src="/images/avatar.jpg"
+                                src="/_static/images/avatar.jpg"
                                 alt="Alex Scott - Full-Stack Developer"
                                 width={320}
                                 height={320}
@@ -86,7 +86,7 @@ export function Hero() {
                         </Button>
                         <Button variant="outline" size="lg" asChild>
                             <a
-                                href="/Resume_2025_it.pdf"
+                                href="/_static/Resume_2025_it.pdf"
                                 download="Alex_Scott_Resume.pdf"
                                 className="flex items-center gap-2"
                             >
