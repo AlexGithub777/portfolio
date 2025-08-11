@@ -59,7 +59,13 @@ const projects = [
         title: "Hawke's Bay Basketball Courts Finder",
         description:
             "A simple interactive map showing public basketball courts in the Hawke's Bay area.",
-        technologies: ["HTML", "CSS", "JavaScript"],
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Google Maps",
+            "Google Fonts",
+        ],
         demoUrl: "https://bball.alexscottdev.com/index.html",
         githubUrl:
             "https://github.com/AlexGithub777/Hawkes-Bay-Basketball-Court-Finder",
