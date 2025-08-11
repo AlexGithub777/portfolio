@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
     {
@@ -25,9 +26,9 @@ const projects = [
             "Leaflet",
             "JavaScript",
         ],
-        demoUrl: "", // Optional: link to a live demo or case study
-        githubUrl: "", // Optional: link to repo if public
-        screenShot: "/edms-screenshot.png", // Optional: path to screenshot
+        demoUrl: "https://edms.alexscottdev.com",
+        githubUrl: "https://github.com/AlexGithub777/EDMS",
+        screenShot: "/_static/images/edms.png",
     },
     {
         title: "Studentwell",
@@ -41,36 +42,37 @@ const projects = [
             "Chart.js",
             "JavaScript",
         ],
-        demoUrl: "",
-        githubUrl: "",
-        screenShot: "/studentwell-screenshot.png", // Optional: path to screenshot
+        demoUrl: "https://studentwell.alexscottdev.com",
+        githubUrl: "https://github.com/AlexGithub777/Studentwell",
+        screenShot: "/_static/images/studentwell.png",
     },
     {
         title: "FlexTime",
         description:
             "A WordPress-based site for booking fitness classes and personal training sessions. Customised theme and backend.",
         technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "jQuery"],
-        demoUrl: "",
-        githubUrl: "",
-        screenShot: "/flextime-screenshot.png", // Optional: path to screenshot
+        demoUrl: "https://flextime.alexscottdev.com",
+        githubUrl: "https://github.com/AlexGithub777/FlexTime",
+        screenShot: "/_static/images/flextime.png",
     },
     {
         title: "Hawke's Bay Basketball Courts Finder",
         description:
-            "A simple interactive map showing public basketball courts in the Hawke’s Bay area.",
+            "A simple interactive map showing public basketball courts in the Hawke's Bay area.",
         technologies: ["HTML", "CSS", "JavaScript"],
-        demoUrl: "",
-        githubUrl: "",
-        screenShot: "/basketball-courts-map.png", // Optional: path to screenshot
+        demoUrl: "https://bball.alexscottdev.com/index.html",
+        githubUrl:
+            "https://github.com/AlexGithub777/Hawkes-Bay-Basketball-Court-Finder",
+        screenShot: "/_static/images/bball.png",
     },
     {
-        title: "Phone Repair Booking System",
+        title: "Phone Fix Repair Booking System",
         description:
             "A frontend prototype for scheduling phone repairs, built with React and Bootstrap.",
         technologies: ["React", "Bootstrap", "JavaScript", "CSS"],
-        demoUrl: "",
-        githubUrl: "",
-        screenShot: "/phone-repair-booking.png", // Optional: path to screenshot
+        demoUrl: "https://phone-repair.alexscottdev.com",
+        githubUrl: "https://github.com/AlexGithub777/Phone-Fix-Booking-System",
+        screenShot: "/_static/images/phone-repair.png",
     },
     {
         title: "Enterprise Notes",
@@ -84,9 +86,9 @@ const projects = [
             "JavaScript",
             "jQuery",
         ],
-        demoUrl: "",
-        githubUrl: "",
-        screenShot: "/enterprise-notes-screenshot.png", // Optional: path to screenshot
+        demoUrl: "https://notes.alexscottdev.com",
+        githubUrl: "https://github.com/AlexGithub777/EnterpriseNotes",
+        screenShot: "/_static/images/notes.png",
     },
 ];
 
@@ -108,10 +110,56 @@ export function FeaturedProjects() {
                     {projects.map((project, index) => (
                         <Card
                             key={index}
-                            className="flex flex-col hover:shadow-lg transition-shadow"
+                            className="group flex flex-col overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card border"
                         >
-                            <CardHeader>
-                                <CardTitle className="text-xl">
+                            {/* Image Container with Overlay */}
+                            <div className="relative overflow-hidden h-48">
+                                <Image
+                                    src={project.screenShot}
+                                    alt={`${project.title} screenshot`}
+                                    fill
+                                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                                />
+
+                                {/* Hover Overlay */}
+                                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div className="flex gap-3">
+                                        <Button
+                                            variant="secondary"
+                                            size="sm"
+                                            asChild
+                                            className="bg-white/90 hover:bg-white text-black"
+                                        >
+                                            <a
+                                                href={project.demoUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <ExternalLink className="mr-2 h-4 w-4" />
+                                                Demo
+                                            </a>
+                                        </Button>
+                                        <Button
+                                            variant="secondary"
+                                            size="sm"
+                                            asChild
+                                            className="bg-white/90 hover:bg-white text-black"
+                                        >
+                                            <a
+                                                href={project.githubUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <Github className="mr-2 h-4 w-4" />
+                                                Code
+                                            </a>
+                                        </Button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <CardHeader className="pb-3">
+                                <CardTitle className="text-xl group-hover:text-primary transition-colors">
                                     {project.title}
                                 </CardTitle>
                                 <CardDescription className="text-sm leading-relaxed">
@@ -119,13 +167,13 @@ export function FeaturedProjects() {
                                 </CardDescription>
                             </CardHeader>
 
-                            <CardContent className="flex-1">
+                            <CardContent className="flex-1 pt-0">
                                 <div className="flex flex-wrap gap-2">
                                     {project.technologies.map((tech) => (
                                         <Badge
                                             key={tech}
                                             variant="secondary"
-                                            className="text-xs"
+                                            className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
                                         >
                                             {tech}
                                         </Badge>
@@ -133,12 +181,12 @@ export function FeaturedProjects() {
                                 </div>
                             </CardContent>
 
-                            <CardFooter className="flex gap-2">
+                            <CardFooter className="flex gap-2 pt-4">
                                 <Button
                                     variant="outline"
                                     size="sm"
                                     asChild
-                                    className="flex-1 bg-transparent"
+                                    className="flex-1 group-hover:border-primary group-hover:text-primary transition-colors"
                                 >
                                     <a
                                         href={project.demoUrl}
@@ -153,7 +201,7 @@ export function FeaturedProjects() {
                                     variant="outline"
                                     size="sm"
                                     asChild
-                                    className="flex-1 bg-transparent"
+                                    className="flex-1 group-hover:border-primary group-hover:text-primary transition-colors"
                                 >
                                     <a
                                         href={project.githubUrl}
