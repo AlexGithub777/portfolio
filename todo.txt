@@ -1,7 +1,8 @@
 deploy locally: (add eacvh container to edms_app-network e.g. (docker network connect edms_app-network <container_name>)
-	- studentwell (studentwell.alexscott.me)
-	- flextime (flextime.alexscott.me)
+	- [DONE] studentwell (studentwell.alexscott.me)
+	- [DONE] flextime (flextime.alexscott.me)
 	- enterprise notes (notes.alexscott.me)
+	- [DONE] edms (edms.alexscottdev.com)
 	
 featured projects:
 	- finish/tweak project descriptions
@@ -18,3 +19,6 @@ contact me:
 
 
 remove unncessary dependdices
+
+
+
