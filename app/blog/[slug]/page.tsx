@@ -5,19 +5,18 @@ import { notFound } from "next/navigation";
 import CustomImage from "../../../components/CustomImage";
 import { Navigation } from "../../../components/navigation";
 import { MDXComponents } from "mdx/types";
+import { BackButton } from "../../../components/BackButton";
+import { formatDateNZ } from "@/lib/utils";
 
-// Define your frontmatter type
 interface FrontMatter {
     title: string;
     date: string;
     description?: string;
-    [key: string]: any; // Allow additional properties
+    [key: string]: any;
 }
 
-// MDX components you want to use inside posts
 const mdxComponents: MDXComponents = {
     img: CustomImage,
-    // Add other components as needed
 };
 
 export async function generateStaticParams() {
@@ -51,11 +50,12 @@ export default async function PostPage({
         <div className="min-h-screen bg-background">
             <Navigation />
             <main className="container mx-auto px-4 py-8">
-                <article className="prose prose-gray dark:prose-invert mx-auto max-w-3xl">
+                <BackButton /> {/* client component */}
+                <article className="prose prose-gray dark:prose-invert mx-auto max-w-3xl mt-4">
                     <header className="mb-8">
                         <h1 className="mb-2">{frontmatter.title}</h1>
                         <p className="text-muted-foreground text-sm">
-                            {frontmatter.date}
+                            {formatDateNZ(frontmatter.date)}
                         </p>
                         {frontmatter.description && (
                             <p className="text-muted-foreground mt-4 text-lg">

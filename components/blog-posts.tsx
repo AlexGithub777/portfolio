@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Calendar, ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/getPosts";
+import { formatDateNZ } from "@/lib/utils"; // <-- new import
 
 export function BlogPosts() {
     const blogPosts = getAllPosts(); // dynamically loads posts
@@ -36,11 +37,7 @@ export function BlogPosts() {
                             <CardHeader>
                                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <Calendar className="h-4 w-4" />
-                                    <span>
-                                        {new Date(
-                                            post.date
-                                        ).toLocaleDateString()}
-                                    </span>
+                                    <span>{formatDateNZ(post.date)}</span>
                                 </div>
                                 <CardTitle className="text-xl leading-tight">
                                     {post.title}
