@@ -8,8 +8,8 @@ WORKDIR /app
 # Copy dependency manifests
 COPY package.json package-lock.json* ./
 
-# Install dependencies with clean cache
-RUN npm ci --only=production
+# Install dependencies with legacy peer deps (avoids React 19 conflicts)
+RUN npm install --legacy-peer-deps --only=production
 
 # Stage 2: Builder
 FROM base AS builder
@@ -18,8 +18,8 @@ WORKDIR /app
 # Copy dependency manifests
 COPY package.json package-lock.json* ./
 
-# Install all dependencies (including dev dependencies for build)
-RUN npm ci
+# Install all dependencies (with devDeps, ignoring peer conflicts)
+RUN npm install --legacy-peer-deps
 
 # Copy source code
 COPY . .
