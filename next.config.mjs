@@ -1,3 +1,5 @@
+import nextMDX from "@next/mdx";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: "standalone",
@@ -12,4 +14,12 @@ const nextConfig = {
     },
 };
 
-export default nextConfig;
+// Enable MDX support
+const withMDX = nextMDX({
+    extension: /\.mdx?$/,
+});
+
+export default withMDX({
+    ...nextConfig,
+    pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+});
