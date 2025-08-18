@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -8,26 +9,33 @@ import { useTheme } from "next-themes";
 export function Navigation() {
     const { theme, setTheme } = useTheme();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const router = useRouter();
+    const pathname = usePathname();
 
     const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            const offset = 40;
-            const elementPosition = element.offsetTop - offset;
+        const header = document.querySelector("nav");
+        const headerHeight = header ? header.offsetHeight : 40;
 
-            window.scrollTo({
-                top: elementPosition,
-                behavior: "smooth",
-            });
+        // If not on home page, store target and navigate
+        if (pathname !== "/") {
+            sessionStorage.setItem("scrollTarget", sectionId);
+            router.push("/"); // ScrollHandler will handle the scrolling
+        } else {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const elementPosition =
+                    element.getBoundingClientRect().top +
+                    window.scrollY -
+                    headerHeight;
+                window.scrollTo({ top: elementPosition, behavior: "smooth" });
+            }
         }
+
         setIsMenuOpen(false);
     };
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+    const navigateHome = () => {
+        router.push("/");
         setIsMenuOpen(false);
     };
 
@@ -36,7 +44,7 @@ export function Navigation() {
             <div className="container mx-auto px-4">
                 <div className="flex h-16 items-center justify-between">
                     <button
-                        onClick={scrollToTop}
+                        onClick={navigateHome}
                         className="font-bold text-xl cursor-pointer hover:text-primary transition-colors"
                     >
                         Alex Scott

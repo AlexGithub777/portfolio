@@ -3,7 +3,8 @@ import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import CustomImage from "../../../components/CustomImage";
-import { MDXComponents } from "mdx/types"; // Correct import for MDX components
+import { Navigation } from "../../../components/navigation";
+import { MDXComponents } from "mdx/types";
 
 // Define your frontmatter type
 interface FrontMatter {
@@ -47,10 +48,24 @@ export default async function PostPage({
     });
 
     return (
-        <article className="prose">
-            <h1>{frontmatter.title}</h1>
-            <p className="text-sm text-gray-500">{frontmatter.date}</p>
-            {content}
-        </article>
+        <div className="min-h-screen bg-background">
+            <Navigation />
+            <main className="container mx-auto px-4 py-8">
+                <article className="prose prose-gray dark:prose-invert mx-auto max-w-3xl">
+                    <header className="mb-8">
+                        <h1 className="mb-2">{frontmatter.title}</h1>
+                        <p className="text-muted-foreground text-sm">
+                            {frontmatter.date}
+                        </p>
+                        {frontmatter.description && (
+                            <p className="text-muted-foreground mt-4 text-lg">
+                                {frontmatter.description}
+                            </p>
+                        )}
+                    </header>
+                    <div className="prose-content">{content}</div>
+                </article>
+            </main>
+        </div>
     );
 }
