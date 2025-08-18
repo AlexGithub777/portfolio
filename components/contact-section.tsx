@@ -39,11 +39,17 @@ export function ContactSection() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1500));
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
 
-            // Reset form
+            const data = await res.json();
+
+            if (!res.ok) throw new Error(data.error || "Something went wrong");
+
             setFormData({ name: "", email: "", subject: "", message: "" });
 
             toast({
@@ -51,11 +57,10 @@ export function ContactSection() {
                 description:
                     "Thank you for reaching out. I'll get back to you soon.",
             });
-        } catch (error) {
+        } catch (error: any) {
             toast({
                 title: "Failed to send message",
-                description:
-                    "Please try again or contact me directly via email.",
+                description: error.message || "Please try again later.",
                 variant: "destructive",
             });
         } finally {
