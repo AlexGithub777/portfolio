@@ -86,7 +86,7 @@ export function Hero() {
                         </Button>
                         <Button variant="outline" size="lg" asChild>
                             <a
-                                href="/_static/Resume_2025_it.pdf"
+                                href="/_static/Resume_2026_it.pdf"
                                 download="Alex_Scott_Resume.pdf"
                                 className="flex items-center gap-2"
                             >
