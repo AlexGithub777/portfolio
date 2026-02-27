@@ -55,15 +55,20 @@ export function Hero() {
                     </div>
 
                     <p className="text-lg text-muted-foreground max-w-lg">
-                        Hi, I'm Alex, a full-stack developer from New Zealand
-                        with a degree in Computer Systems. I specialise in
-                        building functional and user-friendly applications that
-                        address real-world problems. My experience spans various
-                        industries, with notable projects including EDMS, a
-                        safety device management system, and Studentwell, a
-                        platform dedicated to student wellbeing. I am currently
-                        open to full-time roles, internships and freelance
-                        opportunities.
+                        Hi, I'm <strong>Alex</strong>, a{" "}
+                        <strong>full-stack developer</strong> from New Zealand
+                        with a degree in Computer Systems. I create{" "}
+                        <strong>scalable, user-friendly applications</strong>{" "}
+                        that solve real-world problems and improve workflows. My
+                        work includes <strong>EDMS</strong>, a emergency device
+                        management system, and <strong>Studentwell</strong>, a
+                        platform supporting student wellbeing. I’m actively
+                        seeking{" "}
+                        <strong>
+                            graduate software roles, internships, or freelance
+                            opportunities
+                        </strong>
+                        , ready to contribute and learn in dynamic environments.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
