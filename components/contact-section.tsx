@@ -29,7 +29,7 @@ export function ContactSection() {
     });
 
     const handleInputChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
@@ -105,7 +105,7 @@ export function ContactSection() {
                                 <div className="flex items-center gap-3">
                                     <MapPin className="h-5 w-5 text-primary" />
                                     <span className="text-muted-foreground">
-                                        Hastings, Hawkes Bay, New Zealand
+                                        Paihia, Bay of Islands, New Zealand
                                     </span>
                                 </div>
                             </div>
