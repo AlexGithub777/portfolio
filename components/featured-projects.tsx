@@ -12,7 +12,34 @@ import { Separator } from "@/components/ui/separator";
 import { Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
 
-const projects = [
+type Project = {
+    title: string;
+    description: string;
+    technologies: string[];
+    demoUrl: string;
+    githubUrl: string;
+    screenShot: string;
+};
+
+const projects: Project[] = [
+    {
+        title: "Hāngī Brothers",
+        description:
+            "A full-stack food ordering platform built for a local hāngī business. Customers can browse the menu, place guest or registered orders, and manage their order details. Includes a protected admin dashboard for managing menu items and orders.",
+        technologies: [
+            "Next.js",
+            "React",
+            "C#",
+            ".NET",
+            "SQLite",
+            "Tailwind CSS",
+            "Clerk",
+            "Docker",
+        ],
+        demoUrl: "https://hangi.alexscottdev.com",
+        githubUrl: "https://github.com/AlexGithub777/HangiBros",
+        screenShot: "/_static/images/hangi.webp",
+    },
     {
         title: "EDMS (Emergency Device Management System)",
         description:
@@ -28,7 +55,7 @@ const projects = [
         ],
         demoUrl: "https://edms.alexscottdev.com",
         githubUrl: "https://github.com/AlexGithub777/EDMS",
-        screenShot: "/_static/images/edms.png",
+        screenShot: "/_static/images/edms.webp",
     },
     {
         title: "Studentwell",
@@ -44,7 +71,7 @@ const projects = [
         ],
         demoUrl: "https://studentwell.alexscottdev.com",
         githubUrl: "https://github.com/AlexGithub777/Studentwell",
-        screenShot: "/_static/images/studentwell.png",
+        screenShot: "/_static/images/studentwell.webp",
     },
     {
         title: "FlexTime",
@@ -53,7 +80,7 @@ const projects = [
         technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "jQuery"],
         demoUrl: "https://flextime.alexscottdev.com",
         githubUrl: "https://github.com/AlexGithub777/FlexTime",
-        screenShot: "/_static/images/flextime.png",
+        screenShot: "/_static/images/flextime.webp",
     },
     {
         title: "Hawke's Bay Basketball Courts Finder",
@@ -69,16 +96,7 @@ const projects = [
         demoUrl: "https://bball.alexscottdev.com/index.html",
         githubUrl:
             "https://github.com/AlexGithub777/Hawkes-Bay-Basketball-Court-Finder",
-        screenShot: "/_static/images/bball.png",
-    },
-    {
-        title: "Phone Fix Repair Booking System",
-        description:
-            "A frontend prototype for scheduling phone repairs, built with React and Bootstrap.",
-        technologies: ["React", "Bootstrap", "JavaScript", "CSS"],
-        demoUrl: "https://phone-repair.alexscottdev.com",
-        githubUrl: "https://github.com/AlexGithub777/Phone-Fix-Booking-System",
-        screenShot: "/_static/images/phone-repair.png",
+        screenShot: "/_static/images/bball.webp",
     },
     {
         title: "Enterprise Notes",
@@ -94,7 +112,7 @@ const projects = [
         ],
         demoUrl: "https://notes.alexscottdev.com",
         githubUrl: "https://github.com/AlexGithub777/EnterpriseNotes",
-        screenShot: "/_static/images/notes.png",
+        screenShot: "/_static/images/notes.webp",
     },
 ];
 
